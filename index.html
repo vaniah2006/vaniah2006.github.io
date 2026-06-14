@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reborn Ready Corp | Nonprofit Reentry Organization | Macon, GA</title>
+  <meta name="description" content="Reborn Ready Corp is a nonprofit reentry organization in Macon-Bibb County, GA providing wraparound services, workforce development, and advocacy for justice-involved adults." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1A2456;
+      --navy-dark: #0f162e;
+      --teal:      #1A8C7A;
+      --teal-light:#E6F4F2;
+      --gold:      #D4A017;
+      --white:     #FFFFFF;
+      --offwhite:  #F7F7F4;
+      --text:      #1C1C1C;
+      --text-mid:  #4A4A4A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--offwhite);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy-dark);
+      padding: 1.1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--teal);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-top: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.2rem;
+    }
+    nav ul a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 6rem 2.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(26,140,122,0.2);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+      width: fit-content;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: #c4910f; transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Stat stack */
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      padding: 2rem 1.75rem;
+      min-width: 200px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.3rem;
+    }
+    .stat-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── TAGLINE BAND ── */
+    .tagline-band {
+      background: var(--teal);
+      padding: 1.25rem 2rem;
+      text-align: center;
+    }
+    .tagline-band p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--white);
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .about-body {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 700px;
+    }
+    .about-body p + p { margin-top: 1.1rem; }
+
+    /* ── PROGRAMS ── */
+    .programs {
+      background: var(--navy);
+      padding: 5rem 2.5rem;
+      color: var(--white);
+    }
+    .programs-inner { max-width: 1100px; margin: 0 auto; }
+    .programs .section-label { color: var(--gold); }
+    .programs .section-title { color: var(--white); margin-bottom: 3rem; }
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .program-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 4px solid var(--gold);
+      padding: 2rem 1.75rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .program-card:hover { background: rgba(255,255,255,0.08); }
+    .program-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+    .program-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+    .program-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+
+    /* ── WHO WE SERVE ── */
+    .population {
+      padding: 5rem 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .population-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .pop-card {
+      background: var(--white);
+      border-top: 3px solid var(--teal);
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .pop-card h4 {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .pop-card p {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── GEOGRAPHIC FOCUS ── */
+    .geography {
+      background: var(--teal-light);
+      padding: 4rem 2.5rem;
+      text-align: center;
+    }
+    .geography-inner { max-width: 700px; margin: 0 auto; }
+    .geography h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .geography p {
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-size: 0.975rem;
+    }
+    .location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── PARTNERS/FUNDERS CTA ── */
+    .partner-cta {
+      background: var(--offwhite);
+      padding: 5rem 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .partner-cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .cta-box {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: 2px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .cta-box.navy-box {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .cta-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .cta-box.navy-box h3 { color: var(--white); }
+    .cta-box p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .cta-box.navy-box p { color: rgba(255,255,255,0.72); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      line-height: 2;
+    }
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .footer-tagline {
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: row; flex-wrap: wrap; justify-content: space-around; min-width: unset; }
+      .population-grid { grid-template-columns: 1fr; }
+      .partner-cta-inner { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      Reborn Ready <span>Corp</span>
+      <span class="nav-tag">501(c)(3) Nonprofit — Macon, GA</span>
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#population">Who We Serve</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">&#9679; Nonprofit Reentry Organization</div>
+        <h1>Reducing Recidivism.<br />Rebuilding <em>Lives.</em></h1>
+        <p class="hero-sub">
+          Reborn Ready Corp provides wraparound reentry services, case management,
+          and workforce development for justice-involved adults in Macon-Bibb County —
+          with a dedicated program for veterans.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-gold">Partner With Us</a>
+          <a href="#programs" class="btn-ghost">Our Programs</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Integrated<br />Entities</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">1</span>
+          <span class="stat-label">County<br />Focus</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">0</span>
+          <span class="stat-label">People<br />Left Behind</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE BAND -->
+  <div class="tagline-band">
+    <p>"Building the Foundations. Owning the Transformation."</p>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">A nonprofit built on the belief that reentry is a community responsibility.</h2>
+    <div class="about-body">
+      <p>Reborn Ready Corp is a Macon-based nonprofit organization dedicated to reducing recidivism through a comprehensive, integrated approach to reentry. We don't offer isolated services — we build systems of support that address housing, employment, and wellbeing together.</p>
+      <p>As the mission holder and grant applicant for the Reborn Ready ecosystem, we oversee program design, fund development, community partnerships, and outcome tracking. Our work is grounded in Macon-Bibb County and designed to meet people where they are — on the day they come home.</p>
+      <p>We serve justice-involved adults at moderate-to-high recidivism risk, with specialized tracks for veterans and individuals in recovery from substance use disorders.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="programs-inner">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Programs built around the whole person.</h2>
+      <div class="programs-grid">
+        <div class="program-card">
+          <span class="program-icon">📋</span>
+          <h3>Case Management</h3>
+          <p>Individualized support plans connecting clients to housing, employment, benefits, counseling, and community resources — coordinated by trained case managers.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-icon">🏛️</span>
+          <h3>Reentry Navigation</h3>
+          <p>Guidance through the practical challenges of reentry: ID restoration, benefits enrollment, court obligations, transportation, and more.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-icon">🔧</span>
+          <h3>Workforce Development</h3>
+          <p>Earn-while-you-learn skilled trades training in partnership with GaChi Handyman Services. Clients build a résumé, earn income, and develop real-world skills simultaneously.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-icon">🎖️</span>
+          <h3>Veterans Reentry Track</h3>
+          <p>A dedicated program for justice-involved veterans offering housing priority, VA benefits navigation, peer support, and connection to veteran-specific employment opportunities.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-icon">🤝</span>
+          <h3>Community Partnerships</h3>
+          <p>We work alongside Macon-Bibb County agencies, faith organizations, employers, and courts to create a coordinated reentry safety net for returning residents.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-icon">📈</span>
+          <h3>Recovery Support Track</h3>
+          <p>Coming Year 2: a dedicated track for individuals in recovery from substance use disorders, combining housing stability with peer recovery coaching and treatment linkage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="population" id="population">
+    <div class="section-label">Population Served</div>
+    <h2 class="section-title">Who we're here for.</h2>
+    <div class="population-grid">
+      <div class="pop-card">
+        <h4>Primary Population</h4>
+        <p>Justice-involved adults with moderate-to-high recidivism risk and no stable housing plan upon release from incarceration.</p>
+      </div>
+      <div class="pop-card">
+        <h4>Veterans Track</h4>
+        <p>Justice-involved veterans navigating reentry alongside service-connected challenges, including PTSD, disability, and VA system complexity.</p>
+      </div>
+      <div class="pop-card">
+        <h4>Recovery Track (Year 2)</h4>
+        <p>Adults in recovery from substance use disorders who need housing stability as the foundation for sustained sobriety and community reintegration.</p>
+      </div>
+      <div class="pop-card">
+        <h4>Geographic Focus</h4>
+        <p>Macon-Bibb County, Georgia. We prioritize deep local impact over broad geographic reach — knowing our community is how we serve it well.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEOGRAPHY -->
+  <section class="geography">
+    <div class="geography-inner">
+      <div class="location-pill">📍 Macon-Bibb County, Georgia</div>
+      <h2>Rooted in Macon.<br />Built for Macon.</h2>
+      <p>Reborn Ready Corp was founded in Macon-Bibb County because that's where the need is, and where our team is committed to making a difference. We believe lasting change happens when an organization is embedded in the community it serves — not parachuting in from outside it.</p>
+    </div>
+  </section>
+
+  <!-- PARTNER / CONTACT CTA -->
+  <section style="background: var(--offwhite); padding: 5rem 2.5rem;" id="contact">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div class="section-label" style="text-align:center;">Get Involved</div>
+      <h2 class="section-title" style="text-align:center; margin: 0 auto 3rem; max-width:600px;">
+        Funders, partners, and referral agencies — we want to connect.
+      </h2>
+      <div class="partner-cta-inner" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+        <div class="cta-box">
+          <h3>For Funders & Grantors</h3>
+          <p>Reborn Ready Corp is actively pursuing grant funding to expand our housing capacity, staffing, and program reach across Macon-Bibb County. We welcome conversations with foundations, government agencies, and impact investors.</p>
+          <a href="mailto:info@rebornreadycorp.org" class="btn-gold">Request Our Program Overview</a>
+        </div>
+        <div class="cta-box navy-box">
+          <h3>For Partner Organizations</h3>
+          <p>We work with courts, probation offices, faith organizations, employers, and social service agencies. If you serve justice-involved adults in the Macon area, let's build a referral relationship.</p>
+          <a href="mailto:info@rebornreadycorp.org" class="btn-gold">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-name">Reborn Ready Corp</p>
+    <p class="footer-tagline">"Building the Foundations. Owning the Transformation."</p>
+    <p>Macon-Bibb County, Georgia &nbsp;|&nbsp; info@rebornreadycorp.org</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 Reborn Ready Corp. All rights reserved. &nbsp;|&nbsp; 501(c)(3) Nonprofit Organization</p>
+  </footer>
+
+</body>
+</html>
