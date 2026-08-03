@@ -443,21 +443,8 @@
           <a href="#programs" class="btn-ghost">Our Programs</a>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Integrated<br />Entities</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num">1</span>
-          <span class="stat-label">County<br />Focus</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num">0</span>
-          <span class="stat-label">People<br />Left Behind</span>
-        </div>
+      <div style="display:flex; align-items:center; justify-content:center;">
+        <img src="door.jpeg" alt="A New Beginning Starts Here" style="width:100%; max-width:380px; height:340px; object-fit:cover; border-radius:4px; box-shadow:0 8px 32px rgba(0,0,0,0.3);" />
       </div>
     </div>
   </section>
@@ -471,15 +458,23 @@
   <section class="about" id="about">
     <div class="section-label">Who We Are</div>
     <h2 class="section-title">A nonprofit built on the belief that reentry is a community responsibility.</h2>
+    
+    <!-- Opening paragraph with door image side by side -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; margin-bottom:1.5rem;">
+      <div class="about-body">
+        <p>Reborn Ready Corp is a Macon-based nonprofit organization dedicated to reducing recidivism through a comprehensive, integrated approach to reentry. We don't offer isolated services — we build systems of support that address housing, employment, and wellbeing together.</p>
+      </div>
+      <img src="door.jpeg" alt="A New Beginning Starts Here" style="width:100%; height:280px; object-fit:cover; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.15);" />
+    </div>
+
     <div class="about-body">
-      <p>Reborn Ready Corp is a Macon-based nonprofit organization dedicated to reducing recidivism through a comprehensive, integrated approach to reentry. We don't offer isolated services — we build systems of support that address housing, employment, and wellbeing together.</p>
       <p>As the mission holder and grant applicant for the Reborn Ready ecosystem, we oversee program design, fund development, community partnerships, and outcome tracking. Our work is grounded in Macon-Bibb County and designed to meet people where they are — on the day they come home.</p>
-      <p>We serve justice-involved adults at moderate-to-high recidivism risk, with specialized tracks for veterans and individuals in recovery from substance use disorders.</p>
+      <p style="margin-top:1.1rem;">We serve justice-involved adults at moderate-to-high recidivism risk, with specialized tracks for veterans and individuals in recovery from substance use disorders.</p>
     </div>
 
     <!-- PHOTO STRIP -->
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem; margin-top:3rem; margin-bottom:3rem;">
-      <img src="flyer.png.PNG" alt="Reborn Ready Corp Programs" style="width:100%; height:220px; object-fit:cover; border-radius:2px;" />
+      <img src="flyer.png.PNG" alt="Reborn Ready Corp Programs" style="width:100%; height:auto; object-fit:contain; border-radius:2px;" />
       <img src="community.jpeg .jpg" alt="Community Involvement" style="width:100%; height:220px; object-fit:cover; border-radius:2px;" />
       <img src="secondchances.jpeg.jpg" alt="Transforming Second Chances" style="width:100%; height:220px; object-fit:cover; border-radius:2px;" />
     </div>
