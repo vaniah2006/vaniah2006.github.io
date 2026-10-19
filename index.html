@@ -1,666 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reborn Ready Corp | Nonprofit Reentry Organization | Macon, GA</title>
-  <meta name="description" content="Reborn Ready Corporation is a Georgia 501(c)(3) nonprofit based in Macon, Georgia, working to support justice-involved adults through document recovery assistance, reentry resources, workforce preparation, and transitional housing development." />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reborn Ready Corp | Transitional Housing for Veterans & Reentry | Serving Middle Georgia</title>
+<meta name="description" content="Reborn Ready Corp is a Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) providing structured transitional housing, accountability, employment readiness, and life skills for veterans and justice-involved men with nonviolent backgrounds, serving Middle Georgia.">
+<link rel="canonical" href="https://rebornready.com/">
 
-    :root {
-      --navy:      #1A2456;
-      --navy-dark: #0f162e;
-      --teal:      #1A8C7A;
-      --teal-light:#E6F4F2;
-      --gold:      #D4A017;
-      --white:     #FFFFFF;
-      --offwhite:  #F7F7F4;
-      --text:      #1C1C1C;
-      --text-mid:  #4A4A4A;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--offwhite);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--navy-dark);
-      padding: 1.1rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 2px solid var(--teal);
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      color: var(--white);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    .nav-logo span { color: var(--gold); }
-    .nav-tag {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      display: block;
-      margin-top: 2px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.2rem;
-    }
-    nav ul a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
-    }
-    nav ul a:hover { color: var(--gold); }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--navy);
-      color: var(--white);
-      padding: 6rem 2.5rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-grid {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: center;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(26,140,122,0.2);
-      border: 1px solid var(--teal);
-      color: var(--teal);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.4rem 0.9rem;
-      border-radius: 2px;
-      margin-bottom: 1.8rem;
-      width: fit-content;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-      font-weight: 900;
-      line-height: 1.08;
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--gold);
-    }
-    .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 520px;
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.8rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-    .btn-gold:hover { background: #c4910f; transform: translateY(-1px); }
-    .btn-ghost {
-      border: 1.5px solid rgba(255,255,255,0.4);
-      color: rgba(255,255,255,0.85);
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 0.8rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
-    }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* Stat stack */
-    .hero-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 4px;
-      padding: 2rem 1.75rem;
-      min-width: 200px;
-    }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--gold);
-      display: block;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.6);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 0.3rem;
-    }
-    .stat-divider {
-      height: 1px;
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* ── TAGLINE BAND ── */
-    .tagline-band {
-      background: var(--teal);
-      padding: 1.25rem 2rem;
-      text-align: center;
-    }
-    .tagline-band p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: var(--white);
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-    }
-
-    /* ── ABOUT ── */
-    .about {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 5rem 2.5rem;
-    }
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    .about-body {
-      font-size: 1rem;
-      color: var(--text-mid);
-      line-height: 1.8;
-      max-width: 700px;
-    }
-    .about-body p + p { margin-top: 1.1rem; }
-
-    /* ── PROGRAMS ── */
-    .programs {
-      background: var(--navy);
-      padding: 5rem 2.5rem;
-      color: var(--white);
-    }
-    .programs-inner { max-width: 1100px; margin: 0 auto; }
-    .programs .section-label { color: var(--gold); }
-    .programs .section-title { color: var(--white); margin-bottom: 3rem; }
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .program-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-left: 4px solid var(--gold);
-      padding: 2rem 1.75rem;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-    .program-card:hover { background: rgba(255,255,255,0.08); }
-    .program-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
-    .program-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    .program-card p {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.7;
-    }
-
-    /* ── WHO WE SERVE ── */
-    .population {
-      padding: 5rem 2.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .population-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-    .pop-card {
-      background: var(--white);
-      border-top: 3px solid var(--teal);
-      padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-    .pop-card h4 {
-      font-weight: 700;
-      color: var(--navy);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-    .pop-card p {
-      font-size: 0.875rem;
-      color: var(--text-mid);
-      line-height: 1.6;
-    }
-
-    /* ── GEOGRAPHIC FOCUS ── */
-    .geography {
-      background: var(--teal-light);
-      padding: 4rem 2.5rem;
-      text-align: center;
-    }
-    .geography-inner { max-width: 700px; margin: 0 auto; }
-    .geography h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      color: var(--navy);
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .geography p {
-      color: var(--text-mid);
-      line-height: 1.75;
-      font-size: 0.975rem;
-    }
-    .location-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.45rem 1.1rem;
-      border-radius: 50px;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── PARTNERS/FUNDERS CTA ── */
-    .partner-cta {
-      background: var(--offwhite);
-      padding: 5rem 2.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .partner-cta-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    .cta-box {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      border-radius: 2px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    }
-    .cta-box.navy-box {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .cta-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-    }
-    .cta-box.navy-box h3 { color: var(--white); }
-    .cta-box p {
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    .cta-box.navy-box p { color: rgba(255,255,255,0.72); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy-dark);
-      color: rgba(255,255,255,0.5);
-      padding: 3rem 2.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      line-height: 2;
-    }
-    .footer-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--white);
-      margin-bottom: 0.25rem;
-    }
-    .footer-tagline {
-      font-style: italic;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-stats { flex-direction: row; flex-wrap: wrap; justify-content: space-around; min-width: unset; }
-      .population-grid { grid-template-columns: 1fr; }
-      .partner-cta-inner { grid-template-columns: 1fr; }
-      nav ul { display: none; }
-    }
-  </style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Reborn Ready Corporation">
+<meta property="og:title" content="Reborn Ready Corp | Transitional Housing for Veterans & Reentry | Serving Middle Georgia">
+<meta property="og:description" content="Reborn Ready Corp is a Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) providing structured transitional housing, accountability, employment readiness, and life skills for veterans and justice-involved men with nonviolent backgrounds, serving Middle Georgia.">
+<meta property="og:url" content="https://rebornready.com/">
+<meta property="og:image" content="https://rebornready.com/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1A2456">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NGO", "@id": "https://rebornready.com/#org", "name": "Reborn Ready Corporation", "alternateName": "Reborn Ready Corp", "url": "https://rebornready.com/", "logo": "https://rebornready.com/img/reborn-ready-logo.jpg", "image": "https://rebornready.com/img/og-image.jpg", "slogan": "Structured Support for New Beginnings.", "description": "Reborn Ready Corp is a Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) providing structured transitional housing, accountability, employment readiness, and life skills for veterans and justice-involved men with nonviolent backgrounds, serving Middle Georgia.", "knowsAbout": ["Transitional housing", "Veteran services", "Prisoner reentry"], "taxID": "41-5078149", "nonprofitStatus": "Nonprofit501c3", "foundingDate": "2026", "foundingLocation": "Macon, Georgia", "founder": {"@type": "Person", "name": "Crystal \"Chrissy\" Hunt", "jobTitle": "Founder & Director"}, "telephone": "+14782274888", "email": "info@rebornreadyhousing.org", "address": {"@type": "PostalAddress", "streetAddress": "111 Lower Elm St, Suite 2207", "addressLocality": "Macon", "addressRegion": "GA", "postalCode": "31206", "addressCountry": "US"}, "areaServed": {"@type": "AdministrativeArea", "name": "Middle Georgia"}, "sameAs": ["https://www.facebook.com/profile.php?id=61590810547935", "https://www.instagram.com/rebornreadycorp", "https://www.tiktok.com/@rebornready7"]}</script>
 </head>
 <body>
-
-  <!-- LOGO HEADER -->
-  <div style="background: var(--navy-dark); padding: 1.5rem 2.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; border-bottom: 3px solid var(--gold);">
-    <div style="display:flex; align-items:center; gap:1.25rem;">
-      <img src="logo.png.jpg" alt="Reborn Ready Corp Logo" style="height:80px; width:auto;" />
-      <div>
-        <div style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:var(--white); line-height:1;">REBORN READY</div>
-        <div style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--gold); letter-spacing:0.2em; text-transform:uppercase;">Corporation</div>
-        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-top:2px;">501(c)(3) Nonprofit</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">
-      <span class="nav-tag">Macon-Bibb County, Georgia</span>
-    </div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#need">The Need</a></li>
-      <li><a href="#programs">Programs</a></li>
-      <li><a href="#population">Who We Serve</a></li>
-      <li><a href="#press">Press</a></li>
-      <li><a href="#contact" style="background:var(--gold); color:var(--navy); padding:0.4rem 1rem; border-radius:2px; font-weight:700;">Contact Us</a></li>
-    </ul>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><div class="wrap">
+  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): 41-5078149</strong> &middot; Serving Middle Georgia</span>
+  <span class="tb-phone"><a href="tel:+14782274888">(478) 227-4888</a> &middot; <a href="mailto:info@rebornreadyhousing.org">info@rebornreadyhousing.org</a></span>
+</div></div>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Reborn Ready Corporation home">
+    <img src="img/reborn-ready-mark.jpg" alt="Reborn Ready Corporation logo: a phoenix rising over a house, held by two hands" width="54" height="42">
+    <span class="brand-name">Reborn Ready<small>Corporation</small><span class="brand-tag">Where completion opens the door to rebirth</span></span>
+  </a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="site-nav"><span class="bars"><span></span></span>Menu</button>
+  <nav class="nav" id="site-nav" aria-label="Main">
+    <ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Our Programs</a></li><li><a href="the-need.html">The Need</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="news.html">News</a></li><li class="nav-cta"><a href="contact.html">Contact Us</a></li><li class="nav-donate"><a href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Donate</a></li></ul>
   </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge">&#9679; Nonprofit Reentry Organization</div>
-        <h1>Reducing Recidivism.<br />Rebuilding <em>Lives.</em></h1>
-        <p class="hero-sub">
-          Reborn Ready Corp provides wraparound reentry services, case management,
-          and workforce development for justice-involved adults in Macon-Bibb County —
-          with a dedicated program for veterans.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-gold">Partner With Us</a>
-          <a href="#programs" class="btn-ghost">Our Programs</a>
-        </div>
-      </div>
-      <div style="display:flex; align-items:center; justify-content:center;">
-        <img src="door.jpeg" alt="A New Beginning Starts Here" style="width:100%; max-width:480px; height:420px; object-fit:cover; border-radius:4px; box-shadow:0 8px 32px rgba(0,0,0,0.3);" />
+</div></header>
+<div class="notice"><div class="wrap"><strong>Housing is currently full.</strong> <span>Leave us a message with your details to join the waitlist and we'll reach out when a bed opens.</span> <a href="contact.html#waitlist">Join the waitlist</a></div></div>
+<main id="main">
+<section class="hero on-dark">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Veterans &amp; reentry housing &middot; Serving Middle Georgia</p>
+      <h1>A bed, some structure, and somebody in your <em>corner.</em></h1>
+      <p class="lede">Reborn Ready Corp gives veterans and justice-involved men with nonviolent backgrounds a structured place to live and the support to get back on their feet. Serving Middle Georgia.</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="contact.html#waitlist">Join the housing waitlist</a>
+        <a class="btn btn-line" href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Donate</a>
       </div>
     </div>
-  </section>
-
-  <!-- TAGLINE BAND -->
-  <div class="tagline-band">
-    <p>"Building the Foundations. Owning the Transformation."</p>
+    <figure class="hero-photo">
+      <img src="img/new-beginning-door.jpg" alt="An open navy door with the Reborn Ready phoenix on it and a doormat that reads A New Beginning Starts Here" width="863" height="1000">
+    </figure>
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-label">Who We Are</div>
-    <h2 class="section-title">A nonprofit built on the belief that reentry is a community responsibility.</h2>
-    
-    <div class="about-body">
-      <p>Reborn Ready Corp is a Macon-based nonprofit organization dedicated to reducing recidivism through a comprehensive, integrated approach to reentry. We don't offer isolated services — we build systems of support that address housing, employment, and wellbeing together.</p>
-      <p style="margin-top:1.1rem;">As the mission holder and grant applicant for the Reborn Ready ecosystem, we oversee program design, fund development, community partnerships, and outcome tracking. Our work is grounded in Macon-Bibb County and designed to meet people where they are — on the day they come home.</p>
-      <p style="margin-top:1.1rem;">We serve justice-involved adults at moderate-to-high recidivism risk, with specialized tracks for veterans and individuals in recovery from substance use disorders.</p>
-    </div>
+<div class="id-ribbon"><div class="wrap">
+  <span><b>Reborn Ready Corporation</b></span><span class="sep">&bull;</span>
+  <span>IRS-recognized 501(c)(3) nonprofit</span><span class="sep">&bull;</span>
+  <span><b>Charity ID (EIN): 41-5078149</b></span>
+</div></div>
 
-    <!-- PHOTO STRIP -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem; margin-top:3rem; margin-bottom:3rem;">
-      <img src="flyer.png.PNG" alt="Reborn Ready Corp Programs" style="width:100%; height:auto; object-fit:contain; border-radius:2px;" />
-      <img src="community.jpeg .jpg" alt="Community Involvement" style="width:100%; height:auto; object-fit:contain; border-radius:2px; background:#fff;" />
-      <img src="secondchances.jpeg.jpg" alt="Transforming Second Chances" style="width:100%; height:220px; object-fit:cover; border-radius:2px;" />
-    </div>
-
-    <!-- FOUNDER BIO -->
-    <div style="background:var(--white); border-left:4px solid var(--gold); padding:2rem; margin-top:1rem; box-shadow:0 2px 12px rgba(0,0,0,0.07);">
-      <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--teal); margin-bottom:0.5rem;">Meet the Founder</div>
-      <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--navy); margin-bottom:0.25rem;">Crystal "Chrissy" Hunt</h3>
-      <p style="font-size:0.85rem; font-style:italic; color:var(--teal); margin-bottom:1.25rem;">Founder & CEO, Reborn Ready Corp</p>
-      <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:1rem;">Chrissy Hunt is a Macon-based nonprofit leader, entrepreneur, and community advocate with over seven years of experience in criminal justice administration and a degree in Criminal Justice. Before founding Reborn Ready Corp, she served in administrative and program coordination roles at a police department — work that gave her a front-row seat to the cycle of incarceration and the gaps in support that too often lead people back into the system.</p>
-      <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:1rem;">But Chrissy's understanding of instability goes beyond the professional. She has experienced housing insecurity firsthand — a chapter of her life that gave her something no degree or job title could: the lived knowledge of what it feels like to have nowhere to go, and the unshakeable conviction that no one should face that alone.</p>
-      <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:1rem;">That experience didn't break her. It built her purpose.</p>
-      <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:1rem;">In response, Chrissy built Reborn Ready from the ground up — an integrated reentry ecosystem designed to address the root causes of recidivism through stable housing, meaningful employment, and wraparound support. Her vision goes beyond services: she believes that when justice-involved adults are given real tools and real opportunities, they don't just survive reentry — they become contributors to the communities they return to.</p>
-      <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8;">Chrissy leads Reborn Ready Corp as its Founder and CEO, overseeing mission strategy, grant development, and community partnerships across Macon-Bibb County.</p>
-    </div>
-  </section>
-
-  <!-- THE NEED -->
-  <section style="background: var(--navy); color: var(--white); padding: 5rem 2.5rem;" id="need">
-    <div style="max-width: 1100px; margin: 0 auto;">
-      <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem;">The Need</div>
-      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:var(--white); margin-bottom:1rem; line-height:1.2;">The data is clear.<br/>The gap is real.</h2>
-      <p style="font-size:1rem; color:rgba(255,255,255,0.72); max-width:700px; line-height:1.75; margin-bottom:3rem;">Georgia's reentry crisis isn't abstract — it's playing out in Macon-Bibb County every day. These numbers show why Reborn Ready exists.</p>
-
-      <!-- STAT GRID -->
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5px; background:rgba(255,255,255,0.08); margin-bottom:3rem;">
-        <div style="background:var(--navy); padding:2rem 1.75rem;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem;">#7</div>
-          <div style="font-weight:700; font-size:0.95rem; color:var(--white); margin-bottom:0.4rem;">Georgia's Incarceration Rank</div>
-          <div style="font-size:0.8rem; color:rgba(255,255,255,0.55); line-height:1.6;">881 people per 100,000 residents — 7th highest incarceration rate in the U.S. Higher than every country in the world except El Salvador.</div>
-          <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); margin-top:0.75rem;">R Street Institute, 2025</div>
-        </div>
-        <div style="background:var(--navy); padding:2rem 1.75rem;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem;">85%</div>
-          <div style="font-weight:700; font-size:0.95rem; color:var(--white); margin-bottom:0.4rem;">Exit With No Housing Plan</div>
-          <div style="font-size:0.8rem; color:rgba(255,255,255,0.55); line-height:1.6;">Only 15% of Georgia releases pass through structured step-down housing. The remaining 85% exit prison with no formal housing support.</div>
-          <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); margin-top:0.75rem;">Georgia Dept. of Corrections</div>
-        </div>
-        <div style="background:var(--navy); padding:2rem 1.75rem;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem;">10%+</div>
-          <div style="font-weight:700; font-size:0.95rem; color:var(--white); margin-bottom:0.4rem;">Become Homeless After Release</div>
-          <div style="font-size:0.8rem; color:rgba(255,255,255,0.55); line-height:1.6;">More than 1 in 10 people released from incarceration become homeless within months — measurably increasing the risk of reoffending.</div>
-          <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); margin-top:0.75rem;">Urban Institute</div>
-        </div>
-        <div style="background:var(--navy); padding:2rem 1.75rem;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem;">700K+</div>
-          <div style="font-weight:700; font-size:0.95rem; color:var(--white); margin-bottom:0.4rem;">Released Every Year Nationally</div>
-          <div style="font-size:0.8rem; color:rgba(255,255,255,0.55); line-height:1.6;">Over 700,000 people are released from U.S. prisons annually, facing significant, well-documented barriers to affordable housing.</div>
-          <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); margin-top:0.75rem;">Urban Institute</div>
-        </div>
-        <div style="background:var(--navy); padding:2rem 1.75rem;">
-          <div style="font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem;">42%</div>
-          <div style="font-weight:700; font-size:0.95rem; color:var(--white); margin-bottom:0.4rem;">Were Unhoused Before Prison</div>
-          <div style="font-size:0.8rem; color:rgba(255,255,255,0.55); line-height:1.6;">42% of women and 28% of men reported being unsheltered before incarceration — housing instability is a pre-existing condition, not just a post-release problem.</div>
-          <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); margin-top:0.75rem;">Loyola Chicago Center for Criminal Justice, 2025</div>
-        </div>
-        <div style="background:var(--teal); padding:2rem 1.75rem;">
-          <div style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:var(--white); line-height:1.2; margin-bottom:0.75rem; font-style:italic;">"Where Completion Opens the Door to Rebirth."</div>
-          <div style="font-size:0.875rem; color:rgba(255,255,255,0.85); line-height:1.7;">Reborn Ready Corp exists because the data demands it. We are Macon-Bibb County's answer to a statewide housing crisis that leaves thousands without a path forward.</div>
-        </div>
+<section class="section paper">
+  <div class="wrap split wide-left top">
+    <div>
+      <p class="kicker">Why we're here</p>
+      <h2>Getting out is one day. Staying out is every day after.</h2>
+      <div class="prose">
+        <p>Here's what nobody says out loud. A lot of people walk out of a Georgia prison with a bag of paperwork, a release date, and maybe a phone number for a cousin. No lease. No ID half the time. No ride to the probation office. Then everybody acts surprised when they end up back inside.</p>
+        <p>Georgia has about 2,344 transitional center beds for somewhere between 14,000 and 16,000 people released every year. That's room for fewer than 15 out of every 100. Everybody else is on their own the day they walk out.</p>
+        <p>That's the gap. That's where we work. Not with a brochure. With a room, a set of house rules, a paycheck, and people who actually answer the phone.</p>
       </div>
+      <p class="muted" style="margin-top:1.25rem">Bed and release numbers from <a href="https://gps.press/research-library/recidivism-reentry-failures-in-georgia/" target="_blank" rel="noopener">Georgia Prisoners' Speak research library</a>. More on <a href="the-need.html">The Need</a> page.</p>
+    </div>
+    <blockquote class="pull">
+      "Stability starts with a place to sleep. Then structure. Then everything else has room to grow."
+      <cite>Chrissy Hunt, Founder &amp; Director</cite>
+    </blockquote>
+  </div>
+</section>
 
-      <!-- NEEDS STATEMENT -->
-      <div style="border-left:4px solid var(--gold); padding:1.5rem 2rem; background:rgba(255,255,255,0.05);">
-        <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem;">Needs Statement</div>
-        <p style="font-size:1rem; color:rgba(255,255,255,0.85); line-height:1.85; font-style:italic;">"Georgia holds the seventh-highest incarceration rate in the nation, yet only 15% of people released from state prisons pass through structured step-down housing. The remaining 85% reenter Macon-Bibb County with no formal housing plan, at a time when over 10% of returning citizens nationally become homeless within months of release. Reborn Ready Corp addresses this gap directly, pairing stable housing with workforce development to address the two most cited drivers of recidivism: lack of residence and lack of income."</p>
+<section class="section teal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Who we serve</p>
+      <h2>Veterans and men coming home</h2>
+      <p class="lede">Same door, same house rules, same shot. Plenty of the men we serve are both: they served, and then got caught up in the system.</p>
+    </div>
+    <div class="cards">
+      <div class="card gold"><span class="tag">Veterans</span><h3>Veterans</h3><p>Veterans who need stable housing and structure, including veterans dealing with reentry, homelessness, or being out of work.</p></div>
+      <div class="card"><span class="tag">Reentry</span><h3>Nonviolent reentry</h3><p>Men with nonviolent backgrounds coming home, whether you're still on parole or your parole is already done.</p></div>
+      <div class="card navy-top"><span class="tag">Housing &amp; work</span><h3>Homeless or out of work</h3><p>Men dealing with homelessness and unemployment who are ready for structure and willing to put in the effort.</p></div>
+    </div>
+    <div class="btns"><a class="btn btn-navy" href="programs.html">See what we provide</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How it works</p>
+      <h2>Three steps. No fluff.</h2>
+      <p class="lede">The whole program fits on an index card. Doing it is the hard part, and that's why we stay with you the whole way.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Move into a structured house</h3>
+        <p>A shared home in Middle Georgia with daily accountability and clear house expectations. Long enough to get your feet under you, short enough that it doesn't turn into another holding pattern.</p>
+      </div>
+      <div class="step">
+        <h3>Get work-ready</h3>
+        <p>Employment readiness, life-skills coaching, and reentry guidance. Resumes, interviews, IDs, referrals, whatever's standing between you and a paycheck. We track your goals so you can see yourself move.</p>
+      </div>
+      <div class="step">
+        <h3>Leave with a plan that holds</h3>
+        <p>Savings habits, a budget you've actually lived on, references, your documents back in hand, and a place lined up. Then you go. And we're still a phone call away.</p>
       </div>
     </div>
-  </section>
+    <div class="btns"><a class="btn btn-navy" href="programs.html">Read the full program</a></div>
+  </div>
+</section>
 
-  <!-- PROGRAMS -->
-  <section class="programs" id="programs">
-    <div class="programs-inner">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Programs built around the whole person.</h2>
-      <div class="programs-grid">
-        <div class="program-card">
-          <span class="program-icon">📋</span>
-          <h3>Case Management</h3>
-          <p>Individualized support plans connecting clients to housing, employment, benefits, counseling, and community resources — coordinated by trained case managers.</p>
-        </div>
-        <div class="program-card">
-          <span class="program-icon">🏛️</span>
-          <h3>Reentry Navigation</h3>
-          <p>Guidance through the practical challenges of reentry: ID restoration, benefits enrollment, court obligations, transportation, and more.</p>
-        </div>
-        <div class="program-card">
-          <span class="program-icon">🔧</span>
-          <h3>Workforce Development</h3>
-          <p>Earn-while-you-learn skilled trades training in partnership with GaChi Handyman Services. Clients build a résumé, earn income, and develop real-world skills simultaneously.</p>
-        </div>
-        <div class="program-card">
-          <span class="program-icon">🎖️</span>
-          <h3>Veterans Reentry Track</h3>
-          <p>A dedicated program for justice-involved veterans offering housing priority, VA benefits navigation, peer support, and connection to veteran-specific employment opportunities.</p>
-        </div>
-        <div class="program-card">
-          <span class="program-icon">🤝</span>
-          <h3>Community Partnerships</h3>
-          <p>We work alongside Macon-Bibb County agencies, faith organizations, employers, and courts to create a coordinated reentry safety net for returning residents.</p>
-        </div>
-        <div class="program-card">
-          <span class="program-icon">📈</span>
-          <h3>Recovery Support Track</h3>
-          <p>Coming Year 2: a dedicated track for individuals in recovery from substance use disorders, combining housing stability with peer recovery coaching and treatment linkage.</p>
-        </div>
+<div class="bleed">
+  <img src="img/transitional-house-porch.jpg" alt="Illustrative photo of a brick house with a covered porch and rocking chairs at sunset" loading="lazy" width="1600" height="900">
+  <div class="over"><div class="wrap"><p>Not a shelter. Not a halfway house with bars on the windows. A real home.</p><p class="photo-note">Illustrative photo. For residents' safety and privacy, we don't publish house locations.</p></div></div>
+</div>
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The setup</p>
+      <h2>Three pieces that work together</h2>
+      <p class="lede">We built this so the money, the house, and the work all point the same direction. Each piece has its own job.</p>
+    </div>
+    <div class="trio">
+      <div class="card">
+        <span class="tag">The nonprofit</span>
+        <h3>Reborn Ready Corp</h3>
+        <p>The 501(c)(3). Runs the program: placement, accountability, coaching, referrals, and oversight of every resident. This is who you're donating to. Charity ID (EIN) 41-5078149.</p>
+      </div>
+      <div class="card gold">
+        <span class="tag">The houses</span>
+        <h3>Reborn Ready Housing LLC</h3>
+        <p>A separate company that secures, leases, and manages the houses our residents live in. Keeping it separate means the nonprofit can focus on people while the LLC handles the property side.</p>
+      </div>
+      <div class="card navy-top">
+        <span class="tag">The work</span>
+        <h3>GaChi Handyman Services LLC</h3>
+        <p>A working handyman business in Middle Georgia and a partner for hands-on work experience. When there's a fit, residents can pick up real job-site skills and a reference.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHO WE SERVE -->
-  <section class="population" id="population">
-    <div class="section-label">Population Served</div>
-    <h2 class="section-title">Who we're here for.</h2>
-    <div class="population-grid">
-      <div class="pop-card">
-        <h4>Primary Population</h4>
-        <p>Justice-involved adults with moderate-to-high recidivism risk and no stable housing plan upon release from incarceration.</p>
-      </div>
-      <div class="pop-card">
-        <h4>Veterans Track</h4>
-        <p>Justice-involved veterans navigating reentry alongside service-connected challenges, including PTSD, disability, and VA system complexity.</p>
-      </div>
-      <div class="pop-card">
-        <h4>Recovery Track (Year 2)</h4>
-        <p>Adults in recovery from substance use disorders who need housing stability as the foundation for sustained sobriety and community reintegration.</p>
-      </div>
-      <div class="pop-card">
-        <h4>Geographic Focus</h4>
-        <p>Macon-Bibb County, Georgia. We prioritize deep local impact over broad geographic reach — knowing our community is how we serve it well.</p>
-      </div>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Year one goals</p>
+      <h2>What we're aiming for</h2>
+      <p class="prose">These are targets, not results. We haven't earned the right to brag yet. When we have real numbers, we'll put them right here, good or bad.</p>
     </div>
-  </section>
-
-  <!-- GEOGRAPHY -->
-  <section class="geography">
-    <div class="geography-inner">
-      <div class="location-pill">📍 Macon-Bibb County, Georgia</div>
-      <h2>Rooted in Macon.<br />Built for Macon.</h2>
-      <p>Reborn Ready Corp was founded in Macon-Bibb County because that's where the need is, and where our team is committed to making a difference. We believe lasting change happens when an organization is embedded in the community it serves — not parachuting in from outside it.</p>
+    <div class="goals">
+      <div class="goal"><span class="n">40&ndash;60</span><p>people served in our first year</p></div>
+      <div class="goal"><span class="n">65&ndash;75%</span><p>still stably housed six months after moving in</p></div>
+      <div class="goal"><span class="n">35&ndash;50%</span><p>working a job within three months of entry</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PARTNER / CONTACT CTA -->
-  <section style="background: var(--offwhite); padding: 5rem 2.5rem;" id="contact">
-    <div style="max-width: 1000px; margin: 0 auto;">
-      <div style="text-align:center; margin-bottom:1.5rem; font-size:0.9rem; color:var(--text-mid);">
-        📍 111 Lower Elm St, Unit #2207, Macon, GA 31206 &nbsp;|&nbsp; 📞 <a href="tel:4782274888" style="color:var(--navy); text-decoration:none; font-weight:600;">(478) 227-4888</a>
+<section class="section paper">
+  <div class="wrap founder">
+    <figure class="founder-photo">
+      <img src="img/chrissy-hunt-founder.jpg" alt="Chrissy Hunt, founder and director of Reborn Ready Corp, smiling" loading="lazy" width="864" height="1184">
+    </figure>
+    <div>
+      <p class="kicker">Who's behind this</p>
+      <h2>Hey, I'm Chrissy.</h2>
+      <p class="role">Founder &amp; Director, Reborn Ready Corp</p>
+      <div class="prose">
+        <p>I've spent years around young people who got caught up early. Seven years running a youth-at-risk group. Six years running a program for underage first-time offenders. Plus years doing admin and program work inside a police department.</p>
+        <p>I kept seeing the same thing. Somebody does the time, comes home ready to do right, and there's nowhere to land. I've been without stable housing myself. I know what that does to your head. So I stopped waiting for somebody else to fix it.</p>
       </div>
-      <div class="section-label" style="text-align:center;">Get Involved</div>
-      <h2 class="section-title" style="text-align:center; margin: 0 auto 3rem; max-width:600px;">
-        Funders, partners, and referral agencies — we want to connect.
-      </h2>
-      <div class="partner-cta-inner" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
-        <div class="cta-box">
-          <h3>For Funders & Grantors</h3>
-          <p>Reborn Ready Corp is actively pursuing grant funding to expand our housing capacity, staffing, and program reach across Macon-Bibb County. We welcome conversations with foundations, government agencies, and impact investors.</p>
-          <a href="mailto:info@rebornreadycorp.org" class="btn-gold">Request Our Program Overview</a>
-        </div>
-        <div class="cta-box navy-box">
-          <h3>For Partner Organizations</h3>
-          <p>We work with courts, probation offices, faith organizations, employers, and social service agencies. If you serve justice-involved adults in the Macon area, let's build a referral relationship.</p>
-          <a href="mailto:info@rebornreadycorp.org" class="btn-gold">Start a Conversation</a>
-        </div>
-      </div>
+      <div class="btns"><a class="btn btn-line" href="about.html">Read our story</a></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRESS RELEASE -->
-  <section style="background: var(--offwhite); padding: 5rem 2.5rem;" id="press">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div class="section-label">In The News</div>
-      <h2 class="section-title">Press Release</h2>
-      <div style="background: var(--white); border-top: 4px solid var(--teal); padding: 2.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border-radius: 2px;">
-        <div style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.75rem;">July 31, 2026 · ABNewswire</div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.3;">Reborn Ready Corporation Launches Comprehensive Transitional Housing Initiative in Macon to Combat Homelessness and Recidivism</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem;"><strong>MACON, GA</strong> — Reborn Ready Corporation, a newly established 501(c)(3) nonprofit organization, is proud to announce its official launch in Macon, Georgia. Guided by the motto, "Where Completion Opens the Door to Rebirth," the organization introduces a holistic, evidence-aligned model designed to support adults transitioning from homelessness, recovery programs, and incarceration.</p>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem;">The organization addresses systemic barriers through a rigorous, accountability-based program built on five core pillars: Structured Housing, Accountability & Skill Building, Transportation Support, Resource Navigation, and Community Integration — including a dedicated track for veterans.</p>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem;">For its inaugural year, Reborn Ready has set ambitious goals: serving 40–60 individuals, targeting a 65–75% housing retention rate after six months, and securing job placements for at least 35–50% of participants within three months of entry.</p>
-        <a href="https://www.abnewswire.com/pressreleases/reborn-ready-corporation-launches-comprehensive-transitional-housing-initiative-in-macon-to-combat-homelessness-and-recidivism_828178.html" target="_blank" style="display:inline-block; background: var(--navy); color: var(--white); font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; padding: 0.85rem 2rem; border-radius: 2px; text-decoration: none; letter-spacing: 0.03em; transition: background 0.2s;">Read Full Press Release →</a>
-      </div>
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Our beds are full. We need more of them.</h2>
+      <p>Every gift helps us open more space for veterans and men on the waitlist. If you fund, refer, hire, or lease, we want to talk.</p>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p class="footer-name">Reborn Ready Corp</p>
-    <p class="footer-tagline">"Building the Foundations. Owning the Transformation."</p>
-    <p>111 Lower Elm St, Unit #2207, Macon, GA 31206</p>
-    <p>(478) 227-4888 &nbsp;|&nbsp; info@rebornreadycorp.org</p>
-    <p style="margin-top:0.5rem;">&copy; 2026 Reborn Ready Corp. All rights reserved. &nbsp;|&nbsp; 501(c)(3) Nonprofit Organization</p>
-  </footer>
-
+    <div class="btns">
+      <a class="btn btn-gold" href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Donate</a>
+      <a class="btn btn-line" href="get-involved.html">Ways to help</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div>
+      <img class="footer-logo" src="img/reborn-ready-logo.jpg" alt="Reborn Ready Corporation: Structured Support for New Beginnings" width="150" height="183" loading="lazy">
+      <p>Structured transitional housing and support for veterans and justice-involved men. Serving Middle Georgia.</p>
+      <span class="footer-id">Charity ID (EIN): 41-5078149</span>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <ul><li><a href="about.html">About Us</a></li><li><a href="programs.html">Our Programs</a></li><li><a href="the-need.html">The Need</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact Us</a></li></ul>
+    </div>
+    <div>
+      <h4>Reach us</h4>
+      <ul>
+        <li><a href="tel:+14782274888">(478) 227-4888</a></li>
+        <li><a href="mailto:info@rebornreadyhousing.org">info@rebornreadyhousing.org</a></li>
+        <li>Mail: 111 Lower Elm St, Suite 2207<br>Macon, GA 31206</li>
+        <li class="small">House locations are kept private for residents' safety.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow along</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/profile.php?id=61590810547935" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/rebornreadycorp" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@rebornready7" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+      <a class="btn btn-gold" style="margin-top:1.25rem" href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Donate online</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="wrap">
+    <span>&copy; <span id="year">2026</span> Reborn Ready Corporation. All rights reserved.</span>
+    <span>Reborn Ready Corporation is a 501(c)(3) tax-exempt nonprofit. Charity ID (EIN) 41-5078149. Gifts are tax-deductible to the extent allowed by law.</span>
+  </div></div>
+</footer>
+<script src="js/site.js"></script>
 </body>
 </html>

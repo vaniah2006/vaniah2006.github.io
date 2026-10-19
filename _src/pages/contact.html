@@ -1,0 +1,74 @@
+<section class="page-hero on-dark">
+  <img class="bg" src="img/shared-house-kitchen-table.jpg" alt="" width="1600" height="1200">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+    <p class="kicker">Contact Us</p>
+    <h1>Call us. Seriously.</h1>
+    <p class="lede">Whether you're a veteran or a man coming home looking for housing, calling for a family member, referring a client, or thinking about funding us, a real person reads every message.</p>
+  </div>
+</section>
+
+<section class="section paper" id="waitlist">
+  <div class="wrap">
+    <div class="callout gold" style="margin-bottom:2.5rem">
+      <p><strong>Housing is currently full.</strong> Leave us a message with your details below and we'll add you to the waitlist for future contact.</p>
+    </div>
+  </div>
+  <div class="wrap" style="margin-bottom:3rem"><div style="max-width:720px">
+    <p class="kicker">Joining the waitlist</p>
+    <h2>What to include in your message</h2>
+    <ul class="checks">
+      <li>Whether you're a veteran</li>
+      <li>When you need a place, or your release date</li>
+      <li>Whether you're on parole, or your parole has ended</li>
+      <li>The best phone number or email to reach you, and the best time to call</li>
+      <li>Whatever ID or documents you have. If you've got none, that's okay. Reach out anyway.</li>
+    </ul>
+    <p class="muted" style="margin-top:1.25rem">We serve men with nonviolent backgrounds. Men only for now; we plan to expand.</p>
+  </div></div>
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Reach Reborn Ready</h2>
+      <div class="contact-list">
+        <div class="contact-item"><p class="lbl">Phone</p><a href="tel:{{PHONE_TEL}}">{{PHONE}}</a><p class="muted">If we miss you, leave a message with your name and number. We call back.</p></div>
+        <div class="contact-item"><p class="lbl">Email</p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a><p class="muted">The official email for Reborn Ready Corporation.</p></div>
+        <div class="contact-item"><p class="lbl">Mailing address</p><span class="v">{{ADDR1}}<br>{{ADDR2}}</span><p class="muted">Mail only. For residents' safety and privacy, we never publish house locations.</p></div>
+        <div class="contact-item"><p class="lbl">Charity ID (EIN)</p><span class="v">{{EIN}}</span><p class="muted">Reborn Ready Corporation, 501(c)(3) tax-exempt nonprofit.</p></div>
+        <div class="contact-item"><p class="lbl">Donate</p><a href="{{DONATE}}" target="_blank" rel="noopener">Give online through Zeffy</a></div>
+        <div class="contact-item"><p class="lbl">Social</p><a href="{{FB}}" target="_blank" rel="noopener">Facebook</a> &middot; <a href="{{IG}}" target="_blank" rel="noopener">Instagram</a> &middot; <a href="{{TT}}" target="_blank" rel="noopener">TikTok</a></div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contact-form" novalidate style="scroll-margin-top:7rem">
+      <div>
+        <h2 style="margin-bottom:.35rem">Send a message or join the waitlist</h2>
+        <p class="muted">When you hit the button, your email app opens with everything filled in and addressed to {{EMAIL}}. Just press send.</p>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-reason">I'm reaching out about</label>
+          <select id="f-reason" name="reason">
+            <option value="Join the housing waitlist (for myself)">Join the housing waitlist (for myself)</option>
+            <option value="Join the housing waitlist (for someone else)">Join the housing waitlist (for someone else)</option>
+            <option value="Referral partnership" data-key="referral">Referral partnership</option>
+            <option value="Donating or funding">Donating or funding</option>
+            <option value="Donating items" data-key="items">Donating items</option>
+            <option value="Hiring a resident" data-key="hiring">Hiring a resident</option>
+            <option value="Leasing a property to us" data-key="property">Leasing a property to us</option>
+            <option value="Volunteering" data-key="volunteer">Volunteering</option>
+            <option>Press or media</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="For the waitlist: are you a veteran? When do you need housing? Are you on parole or has it ended? Best time to reach you?" required></textarea></div>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <div><button class="btn btn-navy" type="submit">Open email and send</button></div>
+      <p class="form-note">Prefer not to use email? Just call <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a> and leave your details.</p>
+    </form>
+  </div>
+</section>
