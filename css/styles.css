@@ -128,7 +128,7 @@ h4 { font-size: var(--text-base); font-weight: 700; color: var(--navy); margin-b
 .hero h1 em { font-style: normal; color: var(--gold); }
 .hero .lede { color: rgba(255,255,255,.82); }
 .hero-photo { position: relative; }
-.hero-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+.hero-photo img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 30px 60px rgba(0,0,0,.35); }
 .hero-photo figcaption { position: absolute; left: -1.25rem; bottom: 1.5rem; background: var(--gold); color: var(--navy-deep); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; padding: .8rem 1.1rem; border-radius: 4px; max-width: 15rem; line-height: 1.25; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
 
 /* Charity ID ribbon */
