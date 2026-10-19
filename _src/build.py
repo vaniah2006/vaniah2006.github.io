@@ -13,6 +13,7 @@ ADDR2 = "Macon, GA 31206"
 FB = "https://www.facebook.com/profile.php?id=61590810547935"
 IG = "https://www.instagram.com/rebornreadycorp"
 TT = "https://www.tiktok.com/@rebornready7"
+DONATE = "https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2"
 
 NAV = [
     ("index.html", "Home"),
@@ -24,18 +25,18 @@ NAV = [
 ]
 
 PAGES = {
-    "index.html": ("Reborn Ready Corp | Transitional Housing & Reentry Nonprofit in Macon, GA",
-                   "Reborn Ready Corp is a Macon, Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) offering structured transitional housing, paid job training, and reentry support for adults coming home from incarceration, including veterans."),
+    "index.html": ("Reborn Ready Corp | Transitional Housing for Veterans & Reentry | Jones County, GA",
+                   "Reborn Ready Corp is a Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) providing structured transitional housing, accountability, employment readiness, and life skills for veterans and men with nonviolent backgrounds in Jones County and Bibb County."),
     "about.html": ("About Us | Reborn Ready Corp, Macon GA Reentry Nonprofit",
-                   "Meet founder Chrissy Hunt and learn why Reborn Ready Corp exists, how our nonprofit, housing arm, and handyman partner work together, and our 501(c)(3) details. Charity ID 41-5078149."),
-    "programs.html": ("Our Programs | Transitional Housing & Job Training in Macon, GA | Reborn Ready",
-                      "Structured shared housing, accountability and life-skills workshops, paid trades training, transportation help, resource navigation, and a veterans track for justice-involved adults in Middle Georgia."),
+                   "What Reborn Ready Corporation does, who we serve, and who runs it. Veterans first, plus men in nonviolent reentry, in Jones County, GA. 501(c)(3), Charity ID 41-5078149."),
+    "programs.html": ("Our Programs | Veterans & Reentry Transitional Housing in Jones County, GA | Reborn Ready",
+                      "Structured transitional housing placement, daily accountability, reentry guidance, life-skills coaching, employment readiness, resource referrals, and goal tracking for veterans and men with nonviolent backgrounds."),
     "the-need.html": ("The Need | Reentry & Housing Gaps in Georgia | Reborn Ready Corp",
                       "Georgia locks up 881 of every 100,000 residents and has transitional beds for fewer than 15% of people released each year. Here is the reentry gap Reborn Ready Corp is working to close in Macon."),
     "get-involved.html": ("Get Involved | Donate, Partner, Refer or Volunteer | Reborn Ready Corp",
-                          "Support Reborn Ready Corp, a 501(c)(3) in Macon, GA (Charity ID 41-5078149). Donate, fund the first house, refer someone, hire a graduate, lease us a property, or teach a workshop."),
+                          "Support Reborn Ready Corp, a Georgia 501(c)(3) (Charity ID 41-5078149) housing veterans and men in reentry. Donate online, refer someone, hire a resident, lease us a property, or volunteer."),
     "news.html": ("News & Press | Reborn Ready Corp, Macon GA",
-                  "Press releases and updates from Reborn Ready Corporation, the Macon, Georgia transitional housing and reentry nonprofit."),
+                  "Updates and press from Reborn Ready Corporation, the Jones County, Georgia transitional housing nonprofit for veterans and men in reentry."),
     "contact.html": ("Contact Us | Reborn Ready Corp, Macon GA | (478) 227-4888",
                      "Call (478) 227-4888 or email info@rebornreadyhousing.org. Reborn Ready Corp, 111 Lower Elm St, Suite 2207, Macon, GA 31206. 501(c)(3) Charity ID 41-5078149."),
     "404.html": ("Page not found | Reborn Ready Corp", "That page doesn't exist. Head back to Reborn Ready Corp's homepage."),
@@ -52,6 +53,7 @@ ORG_LD = {
     "image": DOMAIN + "/img/og-image.jpg",
     "slogan": "Structured Support for New Beginnings.",
     "description": PAGES["index.html"][1],
+    "knowsAbout": ["Transitional housing", "Veteran services", "Prisoner reentry"],
     "taxID": EIN,
     "nonprofitStatus": "Nonprofit501c3",
     "foundingDate": "2026",
@@ -61,8 +63,8 @@ ORG_LD = {
     "email": EMAIL,
     "address": {"@type": "PostalAddress", "streetAddress": ADDR1, "addressLocality": "Macon",
                 "addressRegion": "GA", "postalCode": "31206", "addressCountry": "US"},
-    "areaServed": [{"@type": "AdministrativeArea", "name": "Macon-Bibb County, Georgia"},
-                   {"@type": "AdministrativeArea", "name": "Middle Georgia"}],
+    "areaServed": [{"@type": "AdministrativeArea", "name": "Jones County, Georgia"},
+                   {"@type": "AdministrativeArea", "name": "Macon-Bibb County, Georgia"}],
     "sameAs": [FB, IG, TT],
 }
 
@@ -112,8 +114,9 @@ def header(page):
         items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
     cur = ' aria-current="page"' if page == "contact.html" else ""
     items.append(f'<li class="nav-cta"><a href="contact.html"{cur}>Contact Us</a></li>')
+    items.append(f'<li class="nav-donate"><a href="{DONATE}" target="_blank" rel="noopener">Donate</a></li>')
     return f"""<div class="topbar"><div class="wrap">
-  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): {EIN}</strong> &middot; Macon, Georgia</span>
+  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): {EIN}</strong> &middot; Housing in Jones County, GA</span>
   <span class="tb-phone"><a href="tel:{PHONE_TEL}">{PHONE}</a> &middot; <a href="mailto:{EMAIL}">{EMAIL}</a></span>
 </div></div>
 <header class="site-header"><div class="wrap">
@@ -126,6 +129,7 @@ def header(page):
     <ul>{''.join(items)}</ul>
   </nav>
 </div></header>
+<div class="notice"><div class="wrap"><strong>Housing is currently full.</strong> <span>Leave us a message with your details to join the waitlist and we'll reach out when a bed opens.</span> <a href="contact.html#waitlist">Join the waitlist</a></div></div>
 <main id="main">
 """
 
@@ -137,7 +141,7 @@ def footer():
   <div class="wrap footer-top">
     <div>
       <img class="footer-logo" src="img/reborn-ready-logo.jpg" alt="Reborn Ready Corporation: Structured Support for New Beginnings" width="150" height="183" loading="lazy">
-      <p>Structured transitional housing, paid job training, and real-world support for adults coming home to Middle Georgia.</p>
+      <p>Structured transitional housing and support for veterans and men in reentry. Primary housing in Jones County. Additional assistance in Bibb County.</p>
       <span class="footer-id">Charity ID (EIN): {EIN}</span>
     </div>
     <div>
@@ -149,7 +153,8 @@ def footer():
       <ul>
         <li><a href="tel:{PHONE_TEL}">{PHONE}</a></li>
         <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-        <li>{ADDR1}<br>{ADDR2}</li>
+        <li>Office &amp; mail: {ADDR1}<br>{ADDR2}</li>
+        <li class="small">House locations are kept private for residents' safety.</li>
       </ul>
     </div>
     <div>
@@ -159,6 +164,7 @@ def footer():
         <li><a href="{IG}" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="{TT}" target="_blank" rel="noopener">TikTok</a></li>
       </ul>
+      <a class="btn btn-gold" style="margin-top:1.25rem" href="{DONATE}" target="_blank" rel="noopener">Donate online</a>
     </div>
   </div>
   <div class="footer-bottom"><div class="wrap">
@@ -177,7 +183,7 @@ def build():
         body = (ROOT / "_src" / "pages" / page).read_text()
         body = (body.replace("{{EIN}}", EIN).replace("{{PHONE}}", PHONE).replace("{{PHONE_TEL}}", PHONE_TEL)
                 .replace("{{EMAIL}}", EMAIL).replace("{{ADDR1}}", ADDR1).replace("{{ADDR2}}", ADDR2)
-                .replace("{{FB}}", FB).replace("{{IG}}", IG).replace("{{TT}}", TT))
+                .replace("{{DONATE}}", DONATE).replace("{{FB}}", FB).replace("{{IG}}", IG).replace("{{TT}}", TT))
         html = head(page) + header(page) + body + footer()
         if page == "404.html":  # served at any depth on GitHub Pages, so use root-absolute paths
             for a in ('href="', 'src="'):

@@ -26,7 +26,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="topbar"><div class="wrap">
-  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): 41-5078149</strong> &middot; Macon, Georgia</span>
+  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): 41-5078149</strong> &middot; Housing in Jones County, GA</span>
   <span class="tb-phone"><a href="tel:+14782274888">(478) 227-4888</a> &middot; <a href="mailto:info@rebornreadyhousing.org">info@rebornreadyhousing.org</a></span>
 </div></div>
 <header class="site-header"><div class="wrap">
@@ -36,9 +36,10 @@
   </a>
   <button class="menu-btn" aria-expanded="false" aria-controls="site-nav"><span class="bars"><span></span></span>Menu</button>
   <nav class="nav" id="site-nav" aria-label="Main">
-    <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Our Programs</a></li><li><a href="the-need.html">The Need</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="news.html">News</a></li><li class="nav-cta"><a href="contact.html" aria-current="page">Contact Us</a></li></ul>
+    <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Our Programs</a></li><li><a href="the-need.html">The Need</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="news.html">News</a></li><li class="nav-cta"><a href="contact.html" aria-current="page">Contact Us</a></li><li class="nav-donate"><a href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Donate</a></li></ul>
   </nav>
 </div></header>
+<div class="notice"><div class="wrap"><strong>Housing is currently full.</strong> <span>Leave us a message with your details to join the waitlist and we'll reach out when a bed opens.</span> <a href="contact.html#waitlist">Join the waitlist</a></div></div>
 <main id="main">
 <section class="page-hero on-dark">
   <img class="bg" src="img/shared-house-kitchen-table.jpg" alt="" width="1600" height="1200">
@@ -46,38 +47,44 @@
     <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
     <p class="kicker">Contact Us</p>
     <h1>Call us. Seriously.</h1>
-    <p class="lede">Whether you're coming home soon, calling for a family member, referring a client, or thinking about funding us, a real person reads every message.</p>
+    <p class="lede">Whether you're a veteran looking for housing, calling for a family member, referring a client, or thinking about funding us, a real person reads every message.</p>
   </div>
 </section>
 
-<section class="section paper">
+<section class="section paper" id="waitlist">
+  <div class="wrap">
+    <div class="callout gold" style="margin-bottom:2.5rem">
+      <p><strong>Housing is currently full.</strong> Leave us a message with your details below and we'll add you to the waitlist for future contact. Veterans get first priority when a bed opens.</p>
+    </div>
+  </div>
   <div class="wrap contact-grid">
     <div>
       <h2>Reach Reborn Ready</h2>
       <div class="contact-list">
         <div class="contact-item"><p class="lbl">Phone</p><a href="tel:+14782274888">(478) 227-4888</a><p class="muted">If we miss you, leave a message with your name and number. We call back.</p></div>
-        <div class="contact-item"><p class="lbl">Email</p><a href="mailto:info@rebornreadyhousing.org">info@rebornreadyhousing.org</a></div>
-        <div class="contact-item"><p class="lbl">Office &amp; mailing address</p><span class="v">111 Lower Elm St, Suite 2207<br>Macon, GA 31206</span><p class="muted">Please call before stopping by so someone's there to meet you.</p></div>
+        <div class="contact-item"><p class="lbl">Email</p><a href="mailto:info@rebornreadyhousing.org">info@rebornreadyhousing.org</a><p class="muted">The official email for Reborn Ready Corporation.</p></div>
+        <div class="contact-item"><p class="lbl">Office &amp; mailing address</p><span class="v">111 Lower Elm St, Suite 2207<br>Macon, GA 31206</span><p class="muted">Office and mail only. This is not a housing site. For residents' safety and privacy, we never publish house locations.</p></div>
         <div class="contact-item"><p class="lbl">Charity ID (EIN)</p><span class="v">41-5078149</span><p class="muted">Reborn Ready Corporation, 501(c)(3) tax-exempt nonprofit.</p></div>
+        <div class="contact-item"><p class="lbl">Donate</p><a href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Give online through Zeffy</a></div>
         <div class="contact-item"><p class="lbl">Social</p><a href="https://www.facebook.com/profile.php?id=61590810547935" target="_blank" rel="noopener">Facebook</a> &middot; <a href="https://www.instagram.com/rebornreadycorp" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://www.tiktok.com/@rebornready7" target="_blank" rel="noopener">TikTok</a></div>
       </div>
     </div>
 
     <form class="contact-form" id="contact-form" novalidate>
       <div>
-        <h2 style="margin-bottom:.35rem">Send a message</h2>
-        <p class="muted">This opens your email app with everything filled in. Just hit send.</p>
+        <h2 style="margin-bottom:.35rem">Send a message or join the waitlist</h2>
+        <p class="muted">When you hit the button, your email app opens with everything filled in and addressed to info@rebornreadyhousing.org. Just press send.</p>
       </div>
       <div class="form-row">
         <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-reason">I'm reaching out about</label>
           <select id="f-reason" name="reason">
-            <option>Housing for myself</option>
-            <option>Housing for a family member</option>
+            <option>Join the housing waitlist (for myself)</option>
+            <option>Join the housing waitlist (for someone else)</option>
             <option>Referring a client</option>
             <option>Donating or funding</option>
             <option>Hiring a resident</option>
-            <option>Leasing a property to you</option>
+            <option>Leasing a property to us</option>
             <option>Volunteering</option>
             <option>Press or media</option>
             <option>Something else</option>
@@ -88,25 +95,26 @@
         <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
       </div>
-      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us a little. If it's about housing, a release date and county help a lot." required></textarea></div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="For the waitlist: are you a veteran? When do you need housing? Are you on parole or has it ended? Best time to reach you?" required></textarea></div>
       <p class="form-error" id="form-error" role="alert"></p>
       <div><button class="btn btn-navy" type="submit">Open email and send</button></div>
-      <p class="form-note">Prefer not to use email? Just call <a href="tel:+14782274888">(478) 227-4888</a>.</p>
+      <p class="form-note">Prefer not to use email? Just call <a href="tel:+14782274888">(478) 227-4888</a> and leave your details.</p>
     </form>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap narrow">
-    <p class="kicker">If you're calling for housing</p>
-    <h2>Have this handy when you call</h2>
+    <p class="kicker">Joining the waitlist</p>
+    <h2>What to include in your message</h2>
     <ul class="checks">
-      <li>Your release date, or when you need a place</li>
-      <li>Whether you're on parole or probation, and your officer's name if you have it</li>
-      <li>What county you're coming home to</li>
-      <li>Whatever ID or documents you have. If you've got none, that's okay. Call anyway.</li>
-      <li>Whether you're a veteran</li>
+      <li>Whether you're a veteran (veterans get first priority)</li>
+      <li>When you need a place, or your release date</li>
+      <li>Whether you're on parole, or your parole has ended</li>
+      <li>The best phone number or email to reach you, and the best time to call</li>
+      <li>Whatever ID or documents you have. If you've got none, that's okay. Reach out anyway.</li>
     </ul>
+    <p class="muted" style="margin-top:1.25rem">We serve people with nonviolent backgrounds only.</p>
   </div>
 </section>
 </main>
@@ -114,7 +122,7 @@
   <div class="wrap footer-top">
     <div>
       <img class="footer-logo" src="img/reborn-ready-logo.jpg" alt="Reborn Ready Corporation: Structured Support for New Beginnings" width="150" height="183" loading="lazy">
-      <p>Structured transitional housing, paid job training, and real-world support for adults coming home to Middle Georgia.</p>
+      <p>Structured transitional housing and support for veterans and men in reentry. Primary housing in Jones County. Additional assistance in Bibb County.</p>
       <span class="footer-id">Charity ID (EIN): 41-5078149</span>
     </div>
     <div>
@@ -126,7 +134,8 @@
       <ul>
         <li><a href="tel:+14782274888">(478) 227-4888</a></li>
         <li><a href="mailto:info@rebornreadyhousing.org">info@rebornreadyhousing.org</a></li>
-        <li>111 Lower Elm St, Suite 2207<br>Macon, GA 31206</li>
+        <li>Office &amp; mail: 111 Lower Elm St, Suite 2207<br>Macon, GA 31206</li>
+        <li class="small">House locations are kept private for residents' safety.</li>
       </ul>
     </div>
     <div>
@@ -136,6 +145,7 @@
         <li><a href="https://www.instagram.com/rebornreadycorp" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.tiktok.com/@rebornready7" target="_blank" rel="noopener">TikTok</a></li>
       </ul>
+      <a class="btn btn-gold" style="margin-top:1.25rem" href="https://www.zeffy.com/en-US/donation-form/donate-to-changed-lives-2" target="_blank" rel="noopener">Donate online</a>
     </div>
   </div>
   <div class="footer-bottom"><div class="wrap">

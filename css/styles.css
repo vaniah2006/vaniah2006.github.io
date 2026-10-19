@@ -89,6 +89,15 @@ body {
   .nav .nav-cta a { margin: .75rem 0 0; text-align: center; border-bottom: 0; padding: .85rem; }
 }
 
+/* Waitlist notice */
+.notice { background: var(--teal-wash); border-bottom: 1px solid #C9E2DE; font-size: var(--text-sm); color: var(--ink); }
+.notice .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .25rem .6rem; padding-top: .6rem; padding-bottom: .6rem; text-align: center; }
+.notice strong { color: var(--navy); }
+.notice a { font-weight: 700; color: var(--teal); text-underline-offset: 3px; }
+.nav .nav-donate a { background: var(--gold); color: var(--navy-deep); font-weight: 700; margin-left: .4rem; border-radius: 4px; }
+.nav .nav-donate a:hover { background: #B68F2C; color: var(--navy-deep); }
+@media (max-width: 1020px) { .nav .nav-donate a { margin: .5rem 0 0; text-align: center; border-bottom: 0; padding: .85rem; } }
+
 /* ---------- Type helpers ---------- */
 .kicker { font-size: var(--text-xs); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: .85rem; }
 .on-dark .kicker { color: var(--gold); }
@@ -332,3 +341,4 @@ form.contact-form { background: var(--paper); border: 1px solid var(--line); bor
   .founder-photo::after { inset: 10px -8px -10px 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover { transform: none; } }
+.bleed .over p.photo-note { font-family: var(--font-body); font-size: var(--text-xs); color: rgba(255,255,255,.75); margin-top: .5rem; max-width: none; }
