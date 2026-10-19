@@ -1,0 +1,69 @@
+<section class="page-hero on-dark">
+  <img class="bg" src="img/shared-house-kitchen-table.jpg" alt="" width="1600" height="1200">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+    <p class="kicker">Contact Us</p>
+    <h1>Call us. Seriously.</h1>
+    <p class="lede">Whether you're coming home soon, calling for a family member, referring a client, or thinking about funding us, a real person reads every message.</p>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Reach Reborn Ready</h2>
+      <div class="contact-list">
+        <div class="contact-item"><p class="lbl">Phone</p><a href="tel:{{PHONE_TEL}}">{{PHONE}}</a><p class="muted">If we miss you, leave a message with your name and number. We call back.</p></div>
+        <div class="contact-item"><p class="lbl">Email</p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></div>
+        <div class="contact-item"><p class="lbl">Office &amp; mailing address</p><span class="v">{{ADDR1}}<br>{{ADDR2}}</span><p class="muted">Please call before stopping by so someone's there to meet you.</p></div>
+        <div class="contact-item"><p class="lbl">Charity ID (EIN)</p><span class="v">{{EIN}}</span><p class="muted">Reborn Ready Corporation, 501(c)(3) tax-exempt nonprofit.</p></div>
+        <div class="contact-item"><p class="lbl">Social</p><a href="{{FB}}" target="_blank" rel="noopener">Facebook</a> &middot; <a href="{{IG}}" target="_blank" rel="noopener">Instagram</a> &middot; <a href="{{TT}}" target="_blank" rel="noopener">TikTok</a></div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <div>
+        <h2 style="margin-bottom:.35rem">Send a message</h2>
+        <p class="muted">This opens your email app with everything filled in. Just hit send.</p>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-reason">I'm reaching out about</label>
+          <select id="f-reason" name="reason">
+            <option>Housing for myself</option>
+            <option>Housing for a family member</option>
+            <option>Referring a client</option>
+            <option>Donating or funding</option>
+            <option>Hiring a resident</option>
+            <option>Leasing a property to you</option>
+            <option>Volunteering</option>
+            <option>Press or media</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us a little. If it's about housing, a release date and county help a lot." required></textarea></div>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <div><button class="btn btn-navy" type="submit">Open email and send</button></div>
+      <p class="form-note">Prefer not to use email? Just call <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <p class="kicker">If you're calling for housing</p>
+    <h2>Have this handy when you call</h2>
+    <ul class="checks">
+      <li>Your release date, or when you need a place</li>
+      <li>Whether you're on parole or probation, and your officer's name if you have it</li>
+      <li>What county you're coming home to</li>
+      <li>Whatever ID or documents you have. If you've got none, that's okay. Call anyway.</li>
+      <li>Whether you're a veteran</li>
+    </ul>
+  </div>
+</section>
