@@ -121,7 +121,7 @@ def header(page):
 <header class="site-header"><div class="wrap">
   <a class="brand" href="index.html" aria-label="Reborn Ready Corporation home">
     <img src="img/reborn-ready-mark.jpg" alt="Reborn Ready Corporation logo: a phoenix rising over a house, held by two hands" width="54" height="42">
-    <span class="brand-name">Reborn Ready<small>Corporation</small></span>
+    <span class="brand-name">Reborn Ready<small>Corporation</small><span class="brand-tag">Where completion opens the door to rebirth</span></span>
   </a>
   <button class="menu-btn" aria-expanded="false" aria-controls="site-nav"><span class="bars"><span></span></span>Menu</button>
   <nav class="nav" id="site-nav" aria-label="Main">
