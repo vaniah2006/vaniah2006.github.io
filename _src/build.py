@@ -25,18 +25,18 @@ NAV = [
 ]
 
 PAGES = {
-    "index.html": ("Reborn Ready Corp | Transitional Housing for Veterans & Reentry | Jones County, GA",
-                   "Reborn Ready Corp is a Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) providing structured transitional housing, accountability, employment readiness, and life skills for veterans and men with nonviolent backgrounds in Jones County and Bibb County."),
+    "index.html": ("Reborn Ready Corp | Transitional Housing for Veterans & Reentry | Serving Middle Georgia",
+                   "Reborn Ready Corp is a Georgia 501(c)(3) nonprofit (Charity ID 41-5078149) providing structured transitional housing, accountability, employment readiness, and life skills for veterans and justice-involved men with nonviolent backgrounds, serving Middle Georgia."),
     "about.html": ("About Us | Reborn Ready Corp, Macon GA Reentry Nonprofit",
-                   "What Reborn Ready Corporation does, who we serve, and who runs it. Veterans first, plus men in nonviolent reentry, in Jones County, GA. 501(c)(3), Charity ID 41-5078149."),
-    "programs.html": ("Our Programs | Veterans & Reentry Transitional Housing in Jones County, GA | Reborn Ready",
+                   "What Reborn Ready Corporation does, who we serve, and who runs it. Serving veterans and justice-involved men across Middle Georgia. 501(c)(3), Charity ID 41-5078149."),
+    "programs.html": ("Our Programs | Veterans & Reentry Transitional Housing in Middle Georgia | Reborn Ready",
                       "Structured transitional housing placement, daily accountability, reentry guidance, life-skills coaching, employment readiness, resource referrals, and goal tracking for veterans and men with nonviolent backgrounds."),
     "the-need.html": ("The Need | Reentry & Housing Gaps in Georgia | Reborn Ready Corp",
-                      "Georgia locks up 881 of every 100,000 residents and has transitional beds for fewer than 15% of people released each year. Here is the reentry gap Reborn Ready Corp is working to close in Macon."),
+                      "Georgia locks up 881 of every 100,000 residents and has transitional beds for fewer than 15% of people released each year. Here is the veteran and reentry gap Reborn Ready Corp is working to close in Middle Georgia."),
     "get-involved.html": ("Get Involved | Donate, Partner, Refer or Volunteer | Reborn Ready Corp",
                           "Support Reborn Ready Corp, a Georgia 501(c)(3) (Charity ID 41-5078149) housing veterans and men in reentry. Donate online, refer someone, hire a resident, lease us a property, or volunteer."),
     "news.html": ("News & Press | Reborn Ready Corp, Macon GA",
-                  "Updates and press from Reborn Ready Corporation, the Jones County, Georgia transitional housing nonprofit for veterans and men in reentry."),
+                  "Updates and press from Reborn Ready Corporation, the Middle Georgia transitional housing nonprofit for veterans and men in reentry."),
     "contact.html": ("Contact Us | Reborn Ready Corp, Macon GA | (478) 227-4888",
                      "Call (478) 227-4888 or email info@rebornreadyhousing.org. Reborn Ready Corp, 111 Lower Elm St, Suite 2207, Macon, GA 31206. 501(c)(3) Charity ID 41-5078149."),
     "404.html": ("Page not found | Reborn Ready Corp", "That page doesn't exist. Head back to Reborn Ready Corp's homepage."),
@@ -63,8 +63,7 @@ ORG_LD = {
     "email": EMAIL,
     "address": {"@type": "PostalAddress", "streetAddress": ADDR1, "addressLocality": "Macon",
                 "addressRegion": "GA", "postalCode": "31206", "addressCountry": "US"},
-    "areaServed": [{"@type": "AdministrativeArea", "name": "Jones County, Georgia"},
-                   {"@type": "AdministrativeArea", "name": "Macon-Bibb County, Georgia"}],
+    "areaServed": {"@type": "AdministrativeArea", "name": "Middle Georgia"},
     "sameAs": [FB, IG, TT],
 }
 
@@ -116,7 +115,7 @@ def header(page):
     items.append(f'<li class="nav-cta"><a href="contact.html"{cur}>Contact Us</a></li>')
     items.append(f'<li class="nav-donate"><a href="{DONATE}" target="_blank" rel="noopener">Donate</a></li>')
     return f"""<div class="topbar"><div class="wrap">
-  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): {EIN}</strong> &middot; Housing in Jones County, GA</span>
+  <span>501(c)(3) nonprofit &middot; <strong>Charity ID (EIN): {EIN}</strong> &middot; Serving Middle Georgia</span>
   <span class="tb-phone"><a href="tel:{PHONE_TEL}">{PHONE}</a> &middot; <a href="mailto:{EMAIL}">{EMAIL}</a></span>
 </div></div>
 <header class="site-header"><div class="wrap">
@@ -141,7 +140,7 @@ def footer():
   <div class="wrap footer-top">
     <div>
       <img class="footer-logo" src="img/reborn-ready-logo.jpg" alt="Reborn Ready Corporation: Structured Support for New Beginnings" width="150" height="183" loading="lazy">
-      <p>Structured transitional housing and support for veterans and men in reentry. Primary housing in Jones County. Additional assistance in Bibb County.</p>
+      <p>Structured transitional housing and support for veterans and justice-involved men. Serving Middle Georgia.</p>
       <span class="footer-id">Charity ID (EIN): {EIN}</span>
     </div>
     <div>
@@ -153,7 +152,7 @@ def footer():
       <ul>
         <li><a href="tel:{PHONE_TEL}">{PHONE}</a></li>
         <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-        <li>Office &amp; mail: {ADDR1}<br>{ADDR2}</li>
+        <li>Mail: {ADDR1}<br>{ADDR2}</li>
         <li class="small">House locations are kept private for residents' safety.</li>
       </ul>
     </div>
