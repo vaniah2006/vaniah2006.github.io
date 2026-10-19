@@ -316,6 +316,7 @@ form.contact-form { background: var(--paper); border: 1px solid var(--line); bor
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero .wrap, .split, .split.wide-left, .founder, .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid > form { order: -1; }
   .hero-photo { max-width: 460px; }
   .hero-photo { max-width: 340px; }
   .hero-photo img { aspect-ratio: auto; }
