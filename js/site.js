@@ -23,6 +23,11 @@
   // Contact form -> opens the visitor's email app addressed to Reborn Ready
   var form = document.getElementById('contact-form');
   if (form) {
+    var key = new URLSearchParams(location.search).get('reason');
+    if (key) {
+      var opt = form.querySelector('option[data-key="' + key + '"]');
+      if (opt) { opt.selected = true; var nm = form.elements['name']; if (nm) nm.focus({preventScroll: true}); }
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var err = document.getElementById('form-error');

@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contact-form" novalidate>
+    <form class="contact-form" id="contact-form" novalidate style="scroll-margin-top:7rem">
       <div>
         <h2 style="margin-bottom:.35rem">Send a message or join the waitlist</h2>
         <p class="muted">When you hit the button, your email app opens with everything filled in and addressed to {{EMAIL}}. Just press send.</p>
@@ -36,13 +36,14 @@
         <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-reason">I'm reaching out about</label>
           <select id="f-reason" name="reason">
-            <option>Join the housing waitlist (for myself)</option>
-            <option>Join the housing waitlist (for someone else)</option>
-            <option>Referring a client</option>
-            <option>Donating or funding</option>
-            <option>Hiring a resident</option>
-            <option>Leasing a property to us</option>
-            <option>Volunteering</option>
+            <option value="Join the housing waitlist (for myself)">Join the housing waitlist (for myself)</option>
+            <option value="Join the housing waitlist (for someone else)">Join the housing waitlist (for someone else)</option>
+            <option value="Referral partnership" data-key="referral">Referral partnership</option>
+            <option value="Donating or funding">Donating or funding</option>
+            <option value="Donating items" data-key="items">Donating items</option>
+            <option value="Hiring a resident" data-key="hiring">Hiring a resident</option>
+            <option value="Leasing a property to us" data-key="property">Leasing a property to us</option>
+            <option value="Volunteering" data-key="volunteer">Volunteering</option>
             <option>Press or media</option>
             <option>Something else</option>
           </select>
